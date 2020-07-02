@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/isaias005/Documents/Projects/rust/hello_cargo/src'
+let g:netrw_dirhist_7='/home/isaias005/Documents/Projects/rust/hello_cargo'
+let g:netrw_dirhist_6='/home/isaias005/Documents/Projects/rust/hello_cargo/src'
+let g:netrw_dirhist_5='/home/isaias005/Documents/Projects/rust/hello_cargo'
+let g:netrw_dirhist_4='/home/isaias005/Documents/Projects/rust/hello_cargo/src'
+let g:netrw_dirhist_3='/home/isaias005/Documents/Projects/rust/hello_cargo'
+let g:netrw_dirhist_2='/home/isaias005/Documents/Projects/rust/hello_cargo/src'
+let g:netrw_dirhist_1='/home/isaias005/Documents/Projects/rust/hello_cargo'
+let g:netrw_dirhist_0='/home/isaias005/Documents/Projects/rust/hello_cargo/src'
+let g:netrw_dirhist_9='/home/isaias005/Documents/Projects/rust/hello_cargo'
