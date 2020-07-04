@@ -168,17 +168,17 @@ local net = lain.widget.net({
 })
 
 -- Weather
-local weather_icon = wibox.widget.imagebox(beautiful.widget_weather)
-weather = lain.widget.weather({
-    city_id = 3492908,
-    notification_preset = { font = beautiful.font, fg = beautiful.fg_normal },
-    weather_na_markup = markup.fontfg(beautiful.font, beautiful.fg_normal, "N/A "),
-    settings = function()
-        descr = weather_now["weather"][1]["description"]:lower()
-        units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, descr .. " @ " .. units .. "°C "))
-    end
-})
+-- local weather_icon = wibox.widget.imagebox(beautiful.widget_weather)
+-- weather = lain.widget.weather({
+--     city_id = 3492908,
+--     notification_preset = { font = beautiful.font, fg = beautiful.fg_normal },
+--     weather_na_markup = markup.fontfg(beautiful.font, beautiful.fg_normal, "N/A "),
+--     settings = function()
+--         descr = weather_now["weather"][1]["description"]:lower()
+--         units = math.floor(weather_now["main"]["temp"])
+--         widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, descr .. " @ " .. units .. "°C "))
+--     end
+-- })
 
 -- Separators
 local arrow_left = separators.arrow_left
@@ -262,15 +262,15 @@ awful.screen.connect_for_each_screen(function(s)
             wibox.container.background(wibox.container.margin(wibox.widget { mem_icon, mem.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#6A7FCC"),
             arrow_left("#6A7FCC", beautiful.bg_focus),
             wibox.container.background(wibox.container.margin(wibox.widget { cpu_icon, cpu.widget, layout = wibox.layout.align.horizontal }, 3, 4), beautiful.bg_focus),
+            -- arrow_left(beautiful.bg_focus, "#6A7FCC"),
+            -- wibox.container.background(wibox.container.margin(wibox.widget { weather_icon, weather.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#6A7FCC"),
             arrow_left(beautiful.bg_focus, "#6A7FCC"),
-            wibox.container.background(wibox.container.margin(wibox.widget { weather_icon, weather.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#6A7FCC"),
+            wibox.container.background(wibox.container.margin(wibox.widget { fs_icon, fs.widget, layout = wibox.layout.align.horizontal }, 2, 3), "#6A7FCC"),
             arrow_left("#6A7FCC", beautiful.bg_focus),
-            wibox.container.background(wibox.container.margin(wibox.widget { fs_icon, fs.widget, layout = wibox.layout.align.horizontal }, 2, 3), beautiful.bg_focus),
+            wibox.container.background(wibox.container.margin(wibox.widget { nil, net_icon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), beautiful.bg_focus),
             arrow_left(beautiful.bg_focus, "#6A7FCC"),
-            wibox.container.background(wibox.container.margin(wibox.widget { nil, net_icon, net.widget, layout = wibox.layout.align.horizontal }, 3, 3), "#6A7FCC"),
-            arrow_left("#6A7FCC", beautiful.bg_focus),
-            wibox.container.background(wibox.container.margin(clock, 4, 8), beautiful.bg_focus),
-            arrow_left(beautiful.bg_focus, beautiful.bg_minimize),
+            wibox.container.background(wibox.container.margin(clock, 4, 8), "#6A7FCC"),
+            arrow_left("#6A7FCC", beautiful.bg_minimize),
             wibox.container.background(wibox.container.margin(s.mylayoutbox, 2, 3), beautiful.bg_minimize),
         },
     }
