@@ -651,9 +651,9 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 --Autostart applications
-awful.spawn.with_shell("picom --config  $HOME/.config/picom/picom.conf")
-awful.spawn.with_shell("nm-applet")
-awful.spawn.with_shell("volumeicon")
+awful.spawn.easy_async_with_shell("picom --config  $HOME/.config/picom/picom.conf", function() end)
+awful.spawn.easy_async_with_shell("nm-applet", function() end)
+awful.spawn.easy_async_with_shell("volumeicon", function() end)
 awful.spawn.with_shell("alacritty")
 awful.spawn.easy_async_with_shell("chromium", function() end)
-awful.spawn.with_shell("alacritty --class Ranger -e ranger")
+awful.spawn.easy_async_with_shell("alacritty --class Ranger -e ranger", function() end)
