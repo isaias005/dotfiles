@@ -39,7 +39,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'sheerun/vim-polyglot'
-Plug 'mattn/emmet-vim'
 call plug#end()
 
 let g:material_style='oceanic'
